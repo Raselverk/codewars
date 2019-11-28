@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+	
+<script>
+
+	// 1
+	function oppositeOfNumber(number){
+		return number = number == 0 ? 0 : number*=-1;
+		}
+	console.log(`Opposite number of -10 = ${oppositeOfNumber(-10)}`);
+	console.log(`Opposite number of 125 = ${oppositeOfNumber(125)}`);
+	console.log(`Opposite number of 0 = ${oppositeOfNumber(0)}`);
+
+
+	// 2
+	function greet (name, owner) {
+	  return name == owner ? 'Hello boss' : 'Hello guest';
+	}
+	console.log(`Name equals owner, ${greet('Daniel', 'Daniel')}`);
+	console.log(`Otherwise, ${greet('Greg', 'Daniel')}`);
+
+
+	//3
+	function countOfLitres(floatNumber){
+		let integerNumber = Math.floor(floatNumber);
+	       return integerNumber = integerNumber < 2 ? 0 : Math.floor(integerNumber /= 2);
+	}
+			console.log(`Count of litres Nathan drinks per hour(1h/0.5lt), time: 2h = ${countOfLitres(2)}`);
+	        console.log(`Count of litres Nathan drinks per hour(1h/0.5lt), time: 0.82h = ${countOfLitres(0.82)}`);
+	        console.log(`Count of litres Nathan drinks per hour(1h/0.5lt), time: 11.8h = ${countOfLitres(11.8)}`);
+	        console.log(`Count of litres Nathan drinks per hour(1h/0.5lt), time: 1787h = ${countOfLitres(1787)}`);
+
+
+	// 4
+	function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+	 let totalGoals = laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+	 return totalGoals;
+	}
+	console.log(`Total goals of 3, 5, 7 = ${goals(3,5,7)}`);
+	console.log(`Total goals of 1, 14, 8 = ${goals(1,14,8)}`);
+
+
+	//5
+	function move (position, roll) {
+	  let newPosition = roll * 2 + position;
+	  return newPosition;
+	}
+	console.log(`New position is: ${move(0,4)}`);
+
+
+	//6
+	function describeAge(age) {
+	let person = "You're a(n) ";
+	  if (age <= 12) {
+	    return person + "kid";
+	  } else if (age >= 13 && age <= 17) {
+	    return person + "teenager";
+	  } else if (age >= 18 && age <= 64) {
+	    return person + "adult";
+	  } else {
+	    return person + "elderly";
+	  }
+	 }
+	console.log(describeAge(19));
+
+
+	//7
+	function warnTheSheep(queue) {
+		let indexOfWolf = queue.reverse().indexOf('wolf');
+		let indexOfEatenSheep = indexOfWolf == 0 ? `Pls go away and stop eating my sheep` : 
+													`Oi! Sheep number ${indexOfWolf}! You are about to be eaten by a wolf!`;
+		return indexOfEatenSheep;
+	}
+	 	console.log(warnTheSheep(["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep", "sheep" ]));
+	 	console.log(warnTheSheep(["sheep", "sheep", "sheep", "sheep", "sheep", "sheep",  "sheep", "wolf" ]));
+
+
+	//8
+	let arrayOfNumbers = [1, 16, 201, 757, 66, -11];
+	let minNumber = Math.min(...arrayOfNumbers);
+	console.log(`MinNumber of 1, 16, 201, 757, 66, -11 = ${minNumber}`);
+
+	let secondArrayOfNumbers = [122, 1, 11, 7, 166, -10];
+	let maxNumber = Math.max(...secondArrayOfNumbers);
+	console.log(`MaxNumber of 122, 1, 11, 7, 166, -10 = ${maxNumber}`);
+
+
+	//9
+	function DNAtoRNA(dna) {
+	 let dnaArr = dna.split("");
+		 for(let i=0; i<dna.length; i++){
+		 	if(dnaArr[i]==="T") dnaArr[i]="U";	
+		 }
+	 let toString = dnaArr.join("");
+	 return toString;
+	}
+	console.log(DNAtoRNA("GCTAT"));
+	console.log(DNAtoRNA("TGCTGT"));
+
+
+	//10
+	function stringToArray(string){
+	 return string.split(' ');  
+	}
+	 console.log("String 'Robin Singh' to array"); 
+	 console.log(stringToArray("Robin Singh"));
+	 console.log("String 'I love arrays they are my favorite' to array");
+	 console.log(stringToArray("I love arrays they are my favorite"));
+
+
+	 //11
+	let arr = [1,2,3];
+	let doubleArr = arr.map(num => num *2);
+	console.log(`Double array of 1,2,3 = ${doubleArr}`);
+
+
+	//12
+	function firstNonConsecutive(arrOfNums) {
+	  for (let i=0; i< arrOfNums.length-1; i++) {
+	    
+	    if (arrOfNums[i + 1] !== arrOfNums[i] + 1) {
+	      return arrOfNums[i + 1];
+	    }   
+	  }return null;
+	}
+	console.log(`First not consecutive number is: ${firstNonConsecutive([2, 3, 4, 5, 6, 8, 0])}`);
+
+
+	//13
+	function grabDoll(dolls){
+		let bag = [];		
+			for(let i=0; i<dolls.length; i++){	
+				if(dolls[i] !=="Hello Kitty" && dolls[i] !=="Barbie doll") continue; 
+				 let counterOfBag = bag.push(dolls[i]);
+				 if(counterOfBag == 3) break;									
+			}	
+		return bag;
+	}
+	console.log(grabDoll(["Barbie doll", "Doll", "Hello Kitty", "Doll", "Barbie doll",  "Doll", "Hello Kitty"]));
+	console.log(grabDoll(["Doll", "Hello Kitty", "Doll", "Barbie doll", "Barbie doll", "Barbie doll"]));
+
+
+	// 14
+	function splitAndMerge(str,sp){
+		return str = str.split("").join(sp);
+	}
+	console.log(splitAndMerge("My name is John"," "));
+	console.log(splitAndMerge("My name is John","-"));
+	console.log(splitAndMerge("My name is John",","));
+
+
+	//15
+	function shuffleIt(arr, el1, el2, el3){
+	  [arr[el1[0]],arr[el1[1]]] = [arr[el1[1]],arr[el1[0]]];
+	  if(el2) [arr[el2[0]],arr[el2[1]]] = [arr[el2[1]],arr[el2[0]]];
+	  if(el3) [arr[el3[0]],arr[el3[1]]] = [arr[el3[1]],arr[el3[0]]];
+	 return arr;
+	}
+	console.log(shuffleIt([1,2,3,4,5],[1,2]));
+	console.log(shuffleIt([1,2,3,4,5],[1,2],[3,4]));
+	console.log(shuffleIt([1,2,3,4,5],[1,2],[3,4],[2,3]));
+
+</script>
+</body>
+</html>
